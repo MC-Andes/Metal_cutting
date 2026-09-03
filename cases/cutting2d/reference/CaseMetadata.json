@@ -1,0 +1,11 @@
+{
+  "kratos_commit": "89db3d29a3fa0c4d45b31af1e05988b48f8ff12a",
+  "kratos_version": "9.5.1",
+  "required_applications": [
+    "PfemSolidMechanicsApplication",
+    "SolidMechanicsApplication",
+    "ContactMechanicsApplication",
+    "ConstitutiveModelsApplication"
+  ],
+  "notes": "Mesh generation and run are scripted from run_case.sh."
+}
