@@ -1,0 +1,71 @@
+{
+  "kratos": {
+    "version": "9.5.1",
+    "commit": "89db3d29a3fa0c4d45b31af1e05988b48f8ff12a",
+    "required_applications": [
+      "PfemSolidMechanicsApplication",
+      "SolidMechanicsApplication",
+      "ContactMechanicsApplication",
+      "ConstitutiveModelsApplication"
+    ]
+  },
+  "geometry": {
+    "domain_size": 2,
+    "workpiece_length_m": 0.004,
+    "workpiece_height_m": 0.0015,
+    "undeformed_chip_thickness_m": 0.0002,
+    "tool_rake_angle_deg": 10.0,
+    "tool_clearance_angle_deg": 7.0,
+    "tool_edge_radius_m": 2.5e-05,
+    "cutting_depth_m": 0.0002,
+    "initial_tool_x_m": -0.0006,
+    "initial_tool_y_m": 0.00075
+  },
+  "kinematics": {
+    "analysis_type": "quasi_static",
+    "time_step_s": 5e-08,
+    "end_time_s": 4e-05,
+    "tool_velocity_m_per_s": 0.25,
+    "buffer_size": 3
+  },
+  "contact": {
+    "formulation": "penalty",
+    "coulomb_friction": 0.35,
+    "penalty_parameter": 1000000000000.0,
+    "normal_tolerance": 1e-08,
+    "tangent_tolerance": 1e-08
+  },
+  "material": {
+    "model": "J2_hyperelastic_plastic_plane_strain",
+    "density_kg_m3": 7850.0,
+    "young_modulus_pa": 210000000000.0,
+    "poisson_ratio": 0.3,
+    "yield_stress_pa": 450000000.0,
+    "kinematic_hardening_modulus_pa": 129240000.0,
+    "hardening_exponent": 16.15,
+    "reference_hardening_modulus_pa": 450000000.0,
+    "infinity_hardening_modulus_pa": 715000000.0
+  },
+  "remeshing": {
+    "enabled": true,
+    "alpha_shape": 1.3,
+    "h_factor": 0.65,
+    "critical_plastic_strain": 1.2
+  },
+  "output": {
+    "output_interval_steps": 25,
+    "transient_cutoff_time_s": 1.2e-05
+  },
+  "cases": {
+    "quick": {
+      "time_step_scale": 2.0,
+      "end_time_scale": 0.3,
+      "mesh_size_factor": 1.4
+    },
+    "reference": {
+      "time_step_scale": 1.0,
+      "end_time_scale": 1.0,
+      "mesh_size_factor": 1.0
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "problem_data": {
+    "problem_name": "cutting2d_quick",
+    "parallel_type": "OpenMP",
+    "domain_size": 2,
+    "start_time": 0.0,
+    "end_time": 1.2e-05,
+    "time_step": 1e-07,
+    "echo_level": 1,
+    "analysis_type": "quasi_static"
+  },
+  "solver_settings": {
+    "solver_type": "solid_mechanics_solver",
+    "model_part_name": "Solid Domain",
+    "domain_size": 2,
+    "echo_level": 1,
+    "buffer_size": 3,
+    "time_integration_method": "Implicit",
+    "line_search": true,
+    "max_iteration": 30,
+    "compute_reactions": true,
+    "reform_dofs_at_each_step": true
+  },
+  "processes": {
+    "constraints_process_list": [
+      {
+        "python_module": "assign_vector_variable_process",
+        "kratos_module": "KratosMultiphysics",
+        "Parameters": {
+          "model_part_name": "Tool",
+          "variable_name": "VELOCITY",
+          "interval": [
+            0.0,
+            "End"
+          ],
+          "value": [
+            0.25,
+            0.0,
+            0.0
+          ],
+          "constrained": [
+            true,
+            true,
+            true
+          ]
+        }
+      }
+    ],
+    "contact_process_list": [
+      {
+        "python_module": "contact_domain_process",
+        "kratos_module": "KratosMultiphysics.ContactMechanicsApplication",
+        "Parameters": {
+          "friction_active": true,
+          "friction_coefficient": 0.35,
+          "penalty_parameter": 1000000000000.0,
+          "normal_tolerance": 1e-08,
+          "tangent_tolerance": 1e-08
+        }
+      }
+    ],
+    "remeshing_process_list": [
+      {
+        "python_module": "remesh_domains_process",
+        "kratos_module": "KratosMultiphysics.PfemSolidMechanicsApplication",
+        "Parameters": {
+          "model_part_name": "Solid Domain",
+          "meshing_frequency": 1,
+          "alpha_shape": 1.3,
+          "h_factor": 0.65,
+          "mesh_size_factor": 1.4,
+          "critical_plastic_strain": 1.2,
+          "remesh": true
+        }
+      }
+    ]
+  },
+  "output_configuration": {
+    "result_file_configuration": {
+      "gidpost_flags": {
+        "GiDPostMode": "GiD_PostBinary",
+        "WriteDeformedMeshFlag": "WriteDeformed",
+        "WriteConditionsFlag": "WriteConditions",
+        "MultiFileFlag": "SingleFile"
+      },
+      "output_interval": 25,
+      "nodal_results": [
+        "DISPLACEMENT",
+        "VELOCITY",
+        "REACTION",
+        "CONTACT_FORCE",
+        "EQUIVALENT_PLASTIC_STRAIN"
+      ],
+      "gauss_point_results": [
+        "CAUCHY_STRESS_VECTOR",
+        "VON_MISES_STRESS"
+      ]
+    }
+  },
+  "model_description": {
+    "orthogonal_cutting_plane_strain": true,
+    "workpiece_length_m": 0.004,
+    "workpiece_height_m": 0.0015,
+    "undeformed_chip_thickness_m": 0.0002,
+    "tool_rake_angle_deg": 10.0,
+    "tool_clearance_angle_deg": 7.0,
+    "tool_edge_radius_m": 2.5e-05,
+    "cutting_depth_m": 0.0002,
+    "initial_tool_x_m": -0.0006,
+    "initial_tool_y_m": 0.00075
+  }
+}
