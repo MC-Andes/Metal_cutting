@@ -1,2 +1,9 @@
 __pycache__/
 *.pyc
+.venv/
+results/
+.DS_Store
+
+# Local native builds and simulation output
+.build/
+runs/

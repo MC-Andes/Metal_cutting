@@ -1,0 +1,350 @@
+{
+  "schema_version": "cutting2d-case-v2",
+  "case_id": "ck45_development_25mmin",
+  "material": {
+    "schema_version": "cutting2d-material-v1",
+    "id": "ck45_literature_jaspers1999_normalized_aisi1045_proxy_finite_v1",
+    "law": "finite_jc",
+    "provenance": {
+      "fields": {
+        "density_kg_m3": {
+          "value": 7870.0,
+          "unit": "kg/m3",
+          "status": "published_literature",
+          "source": "https://doi.org/10.1007/s00170-024-14597-2",
+          "source_locator": "Table 10 and section 2.4.5",
+          "method": "Published typical literature constants, not measurements of the batch",
+          "assumptions": [],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "young_modulus_pa": {
+          "value": 205000000000.0,
+          "unit": "Pa",
+          "status": "published_literature",
+          "source": "https://doi.org/10.1007/s00170-024-14597-2",
+          "source_locator": "Table 10 and section 2.4.5",
+          "method": "Published typical literature constants, not measurements of the batch",
+          "assumptions": [],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "poisson_ratio": {
+          "value": 0.29,
+          "unit": "1",
+          "status": "published_literature",
+          "source": "https://doi.org/10.1007/s00170-024-14597-2",
+          "source_locator": "Table 10 and section 2.4.5",
+          "method": "Published typical literature constants, not measurements of the batch",
+          "assumptions": [],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "initial_temperature_k": {
+          "value": 293.15,
+          "unit": "K",
+          "status": "derived",
+          "source": "https://pure.tue.nl/ws/portalfiles/portal/1434816/9901553.pdf",
+          "source_locator": "pp. 89, 92: room temperature and Fig. 5.9 at 20 degC",
+          "method": "20 degC + 273.15 = 293.15 K",
+          "assumptions": [
+            "Room temperature is represented by 20 degC; not measured Klippel ambient"
+          ],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "jc_a_pa": {
+          "value": 553100000.0,
+          "unit": "Pa",
+          "status": "published_literature",
+          "source": "https://pure.tue.nl/ws/portalfiles/portal/1434816/9901553.pdf",
+          "source_locator": "p. 94 Table 5.3 (PDF p. 112)",
+          "method": "Direct visual transcription of original thesis",
+          "assumptions": [
+            "Normalized AISI 1045 is a different-lot proxy for Ck45"
+          ],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "jc_b_pa": {
+          "value": 600800000.0,
+          "unit": "Pa",
+          "status": "published_literature",
+          "source": "https://pure.tue.nl/ws/portalfiles/portal/1434816/9901553.pdf",
+          "source_locator": "p. 94 Table 5.3 (PDF p. 112)",
+          "method": "Direct visual transcription of original thesis",
+          "assumptions": [
+            "Normalized AISI 1045 is a different-lot proxy for Ck45"
+          ],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "jc_c": {
+          "value": 0.0134,
+          "unit": "1",
+          "status": "published_literature",
+          "source": "https://pure.tue.nl/ws/portalfiles/portal/1434816/9901553.pdf",
+          "source_locator": "p. 94 Table 5.3 (PDF p. 112)",
+          "method": "Direct visual transcription of original thesis",
+          "assumptions": [
+            "Normalized AISI 1045 is a different-lot proxy for Ck45"
+          ],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "jc_n": {
+          "value": 0.234,
+          "unit": "1",
+          "status": "published_literature",
+          "source": "https://pure.tue.nl/ws/portalfiles/portal/1434816/9901553.pdf",
+          "source_locator": "p. 94 Table 5.3 (PDF p. 112)",
+          "method": "Direct visual transcription of original thesis",
+          "assumptions": [
+            "Normalized AISI 1045 is a different-lot proxy for Ck45"
+          ],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "jc_m": {
+          "value": 1.0,
+          "unit": "1",
+          "status": "published_literature",
+          "source": "https://pure.tue.nl/ws/portalfiles/portal/1434816/9901553.pdf",
+          "source_locator": "p. 94 Table 5.3 (PDF p. 112)",
+          "method": "Direct visual transcription of original thesis",
+          "assumptions": [
+            "Normalized AISI 1045 is a different-lot proxy for Ck45"
+          ],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "reference_strain_rate_s_1": {
+          "value": 1.0,
+          "unit": "1/s",
+          "status": "published_literature",
+          "source": "https://pure.tue.nl/ws/portalfiles/portal/1434816/9901553.pdf",
+          "source_locator": "p. 92 Eq. 5.7 (PDF p. 110)",
+          "method": "Direct visual transcription of original thesis",
+          "assumptions": [
+            "Normalized AISI 1045 is a different-lot proxy for Ck45"
+          ],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "reference_temperature_k": {
+          "value": 293.15,
+          "unit": "K",
+          "status": "derived",
+          "source": "https://pure.tue.nl/ws/portalfiles/portal/1434816/9901553.pdf",
+          "source_locator": "pp. 89, 92: room temperature and Fig. 5.9 at 20 degC",
+          "method": "20 degC + 273.15 = 293.15 K",
+          "assumptions": [
+            "Room temperature is represented by 20 degC; not measured Klippel ambient"
+          ],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "melt_temperature_k": {
+          "value": 1733.0,
+          "unit": "K",
+          "status": "published_literature",
+          "source": "https://pure.tue.nl/ws/portalfiles/portal/1434816/9901553.pdf",
+          "source_locator": "p. 94 Table 5.3 (PDF p. 112)",
+          "method": "Direct visual transcription of original thesis",
+          "assumptions": [
+            "Normalized AISI 1045 is a different-lot proxy for Ck45"
+          ],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "specific_heat_j_kg_k": {
+          "value": 486.0,
+          "unit": "J/(kg K)",
+          "status": "published_literature",
+          "source": "https://doi.org/10.1007/s00170-024-14597-2",
+          "source_locator": "Table 10 and section 2.4.5",
+          "method": "Published typical literature constants, not measurements of the batch",
+          "assumptions": [],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "thermal_conductivity_w_m_k": {
+          "value": 50.7,
+          "unit": "W/(m K)",
+          "status": "published_literature",
+          "source": "https://doi.org/10.1007/s00170-024-14597-2",
+          "source_locator": "Table 10 and section 2.4.5",
+          "method": "Published typical literature constants, not measurements of the batch",
+          "assumptions": [],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        },
+        "taylor_quinney": {
+          "value": 0.9,
+          "unit": "1",
+          "status": "assumed",
+          "source": null,
+          "source_locator": "Exploratory model assumption",
+          "method": "Set 90 percent plastic-work heat conversion, to be sensitivity-tested",
+          "assumptions": [
+            "Not a Ck45 batch measurement or part of Jaspers fitted card; Jaspers p. 93 assumed all deformation energy becomes heat"
+          ],
+          "uncertainty": null,
+          "limitations": [
+            "No identified parameter covariance or uncertainty; no MPM calibration"
+          ]
+        }
+      },
+      "limitations": [
+        "Exploratory candidate: successful execution does not establish experimental validation",
+        "Different normalized AISI1045 lot: not the measured 2024 Ck45 tensile fit",
+        "Primary thesis documents dynamic strain-aging and pronounced JC discrepancies around 500 degC",
+        "Tm=1733 K from original Table5.3; do not substitute Klippel2024 typical1773 K or Burns2013 value1490 degC",
+        "Elastic and thermophysical constants use Klippel2024 typical literature values; beta=.9 is an explicit additional assumption",
+        "Migrated numeric constants unchanged; active finite law is described by constitutive_convention",
+        "Experimental plastic strain/rate applicability intervals have not been established here",
+        "Tref and Tm delimit the implemented thermal normalization, not an experimental validity interval",
+        "Friction is a pair/contact assumption in the case thermal section, not a material constant"
+      ],
+      "constitutive_convention": {
+        "kinematics": "3D finite Hencky J2 under Fzz=1 plane strain; Fp remains 3D",
+        "stress": "JC resistance is Cauchy; local return uses q_tau=J*Y",
+        "rate_factor": "1+C*log(max(1,alpha_dot/reference_rate))",
+        "thermal_factor": "1-clamp((T-Tref)/(Tm-Tref),0,1)**m; independent of beta",
+        "beta": "fraction of plastic work converted to heat; beta=0 retains thermal softening",
+        "solid_range": "Stop before T>=Tm; no phase change or physical melt model",
+        "properties": "constant density reference, E, nu, cp, k and beta; no thermal expansion"
+      }
+    },
+    "validity": {
+      "status": "ranges_not_established",
+      "temperature_k": [
+        293.15,
+        1733.0
+      ],
+      "experimental_plastic_strain": null,
+      "experimental_strain_rate_s_1": null
+    },
+    "properties": {
+      "density_kg_m3": 7870.0,
+      "young_modulus_pa": 205000000000.0,
+      "poisson_ratio": 0.29,
+      "initial_temperature_k": 293.15,
+      "jc_a_pa": 553100000.0,
+      "jc_b_pa": 600800000.0,
+      "jc_c": 0.0134,
+      "jc_m": 1.0,
+      "jc_n": 0.234,
+      "reference_strain_rate_s_1": 1.0,
+      "reference_temperature_k": 293.15,
+      "melt_temperature_k": 1733.0,
+      "specific_heat_j_kg_k": 486.0,
+      "thermal_conductivity_w_m_k": 50.7,
+      "taylor_quinney": 0.9,
+      "name": "Ck45"
+    }
+  },
+  "geometry": {
+    "length": 0.0015,
+    "height": 0.0006,
+    "width": 0.001,
+    "uncut_thickness": 0.0001,
+    "edge_radius": 2.5e-05,
+    "rake_angle_deg": 10.0,
+    "clearance_angle_deg": 7.0,
+    "initial_gap": 0.0,
+    "tool_speed": 0.4166666666666667
+  },
+  "solver": {
+    "h": 2.5e-05,
+    "particles_per_axis": 2,
+    "dt_max": 5e-10,
+    "t_end": 0.0012,
+    "cfl": 0.2,
+    "dt_min": 1e-14,
+    "max_steps": 3000000,
+    "max_retries": 12,
+    "operator": "apic_mls_energy_v1",
+    "contact_algorithm": "signed_features_v1"
+  },
+  "boundary": {
+    "fix_bottom_x": true,
+    "fix_bottom_y": true,
+    "fixed_bottom_layers": 1
+  },
+  "thermal": {
+    "conduction": true,
+    "friction_coefficient": 0.35,
+    "friction_heat_workpiece_fraction": 0.9,
+    "tool_temperature_k": 293.15,
+    "interface_conductance_w_m2_k": 0.0,
+    "conduction_operator": "projected_galerkin_v1",
+    "complement_rate_factor": 1.0
+  },
+  "output": {
+    "directory": "./runs/ck45_development_25mmin",
+    "interval": 2.4e-06,
+    "checkpoint_interval": 1000
+  },
+  "acceptance": {
+    "mass_relative": 1e-12,
+    "momentum_relative": 1e-06,
+    "energy_relative": 0.05,
+    "deformation_relative": 0.05,
+    "penetration_over_h": 0.001,
+    "penetration_absolute_m": 1e-08,
+    "energy_absolute_j": 1e-12,
+    "momentum_absolute_ns": 1e-14,
+    "min_plastic_strain": 1e-06
+  },
+  "metadata": {
+    "status": "prepared",
+    "purpose": "Development at 25 m/min; full cutting target, not experimental replication",
+    "assumptions": [
+      "Horizontal +x, rigid tool, stationary stock, plane strain with full 3D constitutive history",
+      "1.5 x 0.6 mm stock, 1 mm width, 100 um uncut thickness, 25 um edge, 10/7 degree angles are explicit design choices",
+      "Initial physical gap is zero; constant speed starts at t=0, no undocumented ramp",
+      "Fix x/y on one bottom grid-coefficient band; actual material support still requires verification",
+      "Coulomb mu=0.35, friction heat partition 0.9 to piece, tool temperature from material initial value: assumptions requiring sensitivity",
+      "Insulated material exterior; zero tool conductance; no convective or radiative loss in this diagnostic model",
+      "Projected thermal reference with eta=1; stabilization and dense limits require accuracy/cost evaluation",
+      "Finite JC properties/ranges from versioned card; constants, no damage, thermal expansion, wear or self-contact",
+      "No stationary window, no accepted h/dt or experimental comparison yet",
+      "Target 0.5 mm advance is provisional; preflight guards may prevent execution at this resolution"
+    ],
+    "resolution_status": "unverified",
+    "family": "basal",
+    "baseline_id": "ck45_development_25mmin",
+    "variation": {},
+    "source_plan": "reports/directrices_cientificas_corte_2d/directrices_framework_publicable.md"
+  },
+  "backend": "cutting2d_numpy_finite_jc_3d_v1"
+}
