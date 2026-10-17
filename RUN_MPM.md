@@ -25,3 +25,40 @@ MPM_RESUME=reports/corte_desarrollado_numerico_20260910/formulacion/mpm_reinicio
 ```
 
 Los dos lanzadores conservan sus rutas históricas dentro de `reports/` porque el código calcula la raíz desde su ubicación. El repositorio incluye sólo esos archivos ejecutables de esa carpeta, no el informe, las corridas ni sus archivos congelados. Una instalación nueva genera su propia identidad y no puede continuar silenciosamente checkpoints de otro entorno.
+
+
+## Comprobación breve de instalación
+
+Antes de una campaña, se puede ejecutar un arranque de dos incrementos sobre una
+malla gruesa. No es una selección de malla ni una verificación física del corte.
+Desde la raíz, con el entorno anterior instalado y destinos nuevos:
+
+```sh
+MPM_LAUNCH=reports/corte_desarrollado_numerico_20260910/formulacion/mpm_runtime_frozen_v4/launch.py
+.venv/bin/python -I "$MPM_LAUNCH" prepare runs/runtime_mpm_smoke --backend certified_range_robust --case cases/cutting2d/mpm_ck45_current.json
+.venv/bin/python -I "$MPM_LAUNCH" check runs/runtime_mpm_smoke --grid-h 100e-6 --material-h 25e-6 --dt 100e-9 --startup-dt 25e-12 --end 50e-12 --wall 30 --threads 1
+.venv/bin/python -I "$MPM_LAUNCH" run runs/runtime_mpm_smoke --destination runs/mpm_smoke --grid-h 100e-6 --material-h 25e-6 --dt 100e-9 --startup-dt 25e-12 --end 50e-12 --wall 30 --threads 1
+```
+
+Revisión del 17 de octubre de 2026: `prepare`, `check` y `run` se ejecutaron
+compilando los núcleos desde el código público `6026aef`, con Python 3.12.14,
+NumPy 2.5.2, SciPy 1.18.1, pybind11 2.13.6 y Apple Clang 21 en macOS ARM64.
+Se reutilizó un entorno con esas dependencias; no se verificó una instalación
+nueva con pip ni la portabilidad a otros sistemas operativos.
+
+El arranque completó dos pasos de 25 ps, sin rechazos ni fallo de ejecución,
+pero terminó como `completed_unverified`, con `accepted=false`. El defecto
+energético relativo de la ventana parcial 0–50 ps fue aproximadamente 49,99 %.
+No se alcanzaron la fase implícita ni plasticidad. Este resultado comprueba el
+recorrido del programa y no acredita aceptación numérica o experimental.
+
+Los controles publicados se ejecutan con el entorno activado:
+
+```sh
+. .venv/bin/activate
+python -B -m unittest discover -s tests -v
+```
+
+Los dos tests verifican generación de archivos y postproceso sintético, no el
+solver MPM completo. El test de generación reescribe los casos históricos
+`quick/reference`; ejecútelo en un checkout limpio o una copia de trabajo.
